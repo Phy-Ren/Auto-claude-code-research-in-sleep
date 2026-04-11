@@ -156,6 +156,11 @@ git clone https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep.git
 mkdir -p ~/.claude/skills/    # create if it doesn't exist (new Claude Code versions)
 cp -r Auto-claude-code-research-in-sleep/skills/* ~/.claude/skills/
 
+# 1b. Update skills (when upstream has new versions)
+cd Auto-claude-code-research-in-sleep && git pull
+bash tools/smart_update.sh          # dry-run: shows what's new/changed/safe
+bash tools/smart_update.sh --apply  # apply: adds new + updates safe ones
+
 # 2. Set up Codex MCP (for review skills)
 npm install -g @openai/codex
 codex setup                    # set model to gpt-5.4 when prompted
