@@ -16,7 +16,3 @@ __pycache__/
 
 # Environment
 .env
-
-# Local planning artifacts
-docs/superpowers/specs/
-docs/superpowers/plans/
